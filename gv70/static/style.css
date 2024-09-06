@@ -1,0 +1,33 @@
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.popup.active {
+    display: block;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.fc-day-past {
+    background-color: #e0e0e0; /* 회색 배경 색상 */
+    color: #a0a0a0; /* 회색 텍스트 색상 */
+}
+
+.fc-day-past .fc-daygrid-day-top {
+    cursor: not-allowed; /* 비활성화된 날짜의 커서 */
+}

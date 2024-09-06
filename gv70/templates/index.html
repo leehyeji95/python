@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>칠붕이 예약하기</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>칠공이 예약하기</h1>
+    <div id="calendar"></div>
+
+    <!-- 예약 팝업 -->
+    <div id="reservation-popup" class="popup">
+        <form id="reservation-form">
+            <input type="hidden" id="event-id" name="id">
+            <label for="name">예약자:</label>
+            <select name="name" id="name">
+                <option value="영웅">영웅</option>
+                <option value="재옥">재옥</option>
+                <option value="은지">은지</option>
+                <option value="혜지">혜지</option>
+            </select>
+            <label for="date">날짜:</label>
+            <input type="date" name="date" id="date" required>
+            <label for="start-time">예약 시간:</label>
+            <input type="time" name="start_time" id="start-time" required step="1800">
+            <label for="end-time">반납 시간:</label>
+            <input type="time" name="end_time" id="end-time" step="1800" required>
+            <p id="duration"></p>
+            <label for="password">비밀번호:</label>
+            <input type="password" name="password" id="password" required>
+            <button type="submit" id="submit" style="display: inline;">예약하기</button>
+            <button type="button" id="update" style="display: none;">수정하기</button>
+            <button type="button" id="delete" style="display: none;">삭제하기</button>
+            <button type="button" id="cancel">취소</button>
+        </form>
+    </div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
